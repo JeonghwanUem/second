@@ -113,6 +113,14 @@ class ForTest8
 			System.out.println();//¿©±â ln¾È¾²´Ï±ñ ¿À·ù³­´Ù
 			}
 			System.out.print("----------------- ");
+		
+		// # how about this bro
+		for (i=5  ; i<0 ; i--) {
+			for (j=(5-i) ; j>=0 ; j--;) {
+				// use i here
+				System.out.print("");
+			}
+		}
 
 	
 	
