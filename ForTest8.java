@@ -10,8 +10,9 @@ class ForTest8
 		1 2 3 4 5
 		1 2 3 4 5 */
 		
+		// # not bad
 		for (i=0; i<5;i++ )
-		{for (j=i;j<i+5 ;j++ )
+		{for (j=1;j<6 ;j++ )
 		{
 			System.out.print(j+" ");
 		}
@@ -25,6 +26,7 @@ class ForTest8
 			0 1 2 3 
 			0 1 2 3 4 */
 
+		// # good job
 		for (i=1; i<6;i++ )
 		{for (j=0;j<i ;j++ )
 		{
@@ -41,6 +43,8 @@ class ForTest8
 		0 1 2 3 4 
 		0 1 2 3 4
 		0 1 2 3 4 */
+		
+		// # not bad,
 		for (i=1; i<6;i++ )
 		{
 		for (j=0;j<5 ;j++ )
@@ -58,9 +62,10 @@ class ForTest8
 	3 3 3 3 3 
 	4 4 4 4 4  */
 		
+		// # think twice, code once.
 		for ( i = 0; i <= 4; i++ ) 
 		{
-			for (j = i; j <= i+4;j++ )
+			for (j = 0; j <= 4;j++ )
 			{
 				
 			
@@ -79,6 +84,7 @@ class ForTest8
 	
 	*/
 		
+		// # easy way; use if-else statement
 		for ( i=0; i<=5 ; i++ )
 		{ for (  z=4; z>=i  ;z-- )
 		{
@@ -98,13 +104,23 @@ class ForTest8
 	3 3 3
 	2 2 2 2
 	1 1 1 1 1*/
+		
+		// # what happened here?
 			for (i =5; i<=8 ;i++ )
 			{for (j=5; j<=i&&j>0;j-- )
 			{System.out.print(j+"  ");
 			}
-			System.out.println();//¿©±â ln¾È¾²´Ï±ñ ¿À·ù³­´Ù
+			System.out.println();//Â¿Â©Â±Ã¢ lnÂ¾ÃˆÂ¾Â²Â´ÃÂ±Ã± Â¿Ã€Â·Ã¹Â³Â­Â´Ã™
 			}
 			System.out.print("----------------- ");
+		
+		// # how about this bro
+		for (i=5  ; i<0 ; i--) {
+			for (j=(5-i) ; j>=0 ; j--;) {
+				// use i here
+				System.out.print("");
+			}
+		}
 
 	
 	
