@@ -1,35 +1,48 @@
 import java.util.*;
 class TestPre0915
 {
+	// # you can create private member variant on this class.
+	private Scanner mScan;
+	
   	public static void main(String[] args) 
 	{
-		Scanner scan = new Scanner(System.in);
+		mScan = new Scanner(System.in);
 		
 		int i;
-		String str="╦ч╢╨╦╕ ╪╠ецгъ╫ю╢о╢ы.";
-		while (true)
-		{
-		System.out.print("[╪╨юШ ╟Э╦╝ га╥н╠в╥╔]\n1.ют╥б\n2.╩Ха╕\n3.╪Жа╓\n4.╟к╩Ж\n╪╠ец > ");
+		String str="К╘■К┴╢К╔╪ Л└═М┐²М√┬Л┼╣К▀┬К▀╓.";
+		while (true) {
+			System.out.print("[Л└╠Л═│ Й╢─К╕╛ М■└К║°Й╥╦К·╗]\n1.Л·┘К═╔\n2.Л┌╜Л═°\n3.Л┬≤Л═∙\n4.Й╡─Л┐┴\nЛ└═М┐² > ");
 		
-		i= scan.nextInt();
+			i= mScan.nextInt();
 		
-		if (i>4)
-		{System.out.println("юъ╦Ьют╥бгъ╫ю╢о╢ы"); break; 
-		}
+			if (i>4) {
+				System.out.println("Л·≤К╙╩Л·┘К═╔М√┬Л┼╣К▀┬К▀╓");
+				break;
+			}
 		
-		switch (i)
-		{
-		case 1: System.out.println("ют╥б"+str); break;
+			switch (i) {
+				case 1: 
+					System.out.println("Л·┘К═╔"+str); 
+					break;
 		
-		case 2: System.out.println("╩Ха╕"+str); break;
+				case 2: 
+					System.out.println("Л┌╜Л═°"+str); 
+					break;
 		
-		case 3: System.out.println("╪Жа╓"+str); break;
+				case 3: 
+					System.out.println("Л┬≤Л═∙"+str); 
+					break;
 		
-		case 4: System.out.println("╟к╩Ж"+str); break;
+				case 4: 
+					System.out.println("Й╡─Л┐┴"+str);
+					break;
 
-		default : System.out.println("га╥н╠в╥╔ю╩ а╬╥Агу╢о╢ы"); return;
-		}
-		}
+				default :
+					System.out.println("М■└К║°Й╥╦К·╗Л²└ Л╒┘Кё▄М∙╘К▀┬К▀╓"); 
+					return;
+			} // # end of switch statement
+			
+		} // # end of while loop
 
 		System.out.println(" "); 
 		
@@ -37,18 +50,18 @@ class TestPre0915
 }
 
 /*
-[╪╨юШ ╟Э╦╝ га╥н╠в╥╔]
-1.ют╥б
-2.╩Ха╕
-3.╪Жа╓
-4.а╬╥А
-╪╠ец > _1
+[Л└╠Л═│ Й╢─К╕╛ М■└К║°Й╥╦К·╗]
+1.Л·┘К═╔
+2.Л┌╜Л═°
+3.Л┬≤Л═∙
+4.Л╒┘Кё▄
+Л└═М┐² > _1
 
-ют╥б╦ч╢╨ ╪╠ецгъ╫ю╢о╢ы. 
+Л·┘К═╔К╘■К┴╢ Л└═М┐²М√┬Л┼╣К▀┬К▀╓. 
 
-0ют╥бго╦И==>га╥н╠в╥╔ю╩ а╬╥Агу╢о╢ы==>Ё║
+0Л·┘К═╔М∙≤К╘╢==>М■└К║°Й╥╦К·╗Л²└ Л╒┘Кё▄М∙╘К▀┬К▀╓==>К│²
 
-5╤С╟М ют╥бго╦И юъ╦Ь╣х ╧Ьхёют╢о╢ы. ==>╢ы╫ц ╦чюню╦╥н
+5К²╪ЙЁ═ Л·┘К═╔М∙≤К╘╢ Л·≤К╙╩К░° К╡┬М≤╦Л·┘К▀┬К▀╓. ==>К▀╓Л▀° К╘■Л²╦Л°╪К║°
 
 
-while ю╩ ╩Г©Кгь╪╜if switch*/
+while Л²└ Л┌╛Л ╘М∙╢Л└°if switch*/
