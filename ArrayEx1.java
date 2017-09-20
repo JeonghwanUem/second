@@ -1,71 +1,72 @@
 import java.util.*;
 class ArrayEx1
 {
- 
+	private Scanner scan; // # you need to understand what is member variable. google it pls
+	
 	public static void main(String[] args) 
 	{
-		Scanner scan = new Scanner(System.in);
-		String subject[] = {"±¹", "¿µ", "¼ö"};
+		scan = new Scanner(System.in);
+		String subject[] = {"êµ­", "ì˜", "ìˆ˜"};
 		int student = scan.nextInt();
 		int ar[][]  = new int[student][5];
 		int i,j;
 		
 		
-		for ( i=0; i <ar.length ;i++ )
-		{
-		System.out.println((i+1)+"¹ø ÇĞ»ı µ¥ÀÌÅÍ ÀÔ·Â>");
+		for ( i=0; i <ar.length ;i++ ) {
+			System.out.println((i+1)+"ë²ˆ í•™ìƒ ë°ì´í„° ì…ë ¥>");
 		
-		for (j =0;j<ar[i].length-2 ;j++ )
-		{
+// 			for (j =0;j<ar[i].length-2 ;j++ ) { // # nice job bro
+			for (j =0;j<subject.length ;j++ ) { // # but how about this
+				System.out.println(subject[j]);
+				ar[i][j] = scan.nextInt();
+			}
 			
-		System.out.println(subject[j]);
-		ar[i][j] = scan.nextInt();
-		}
-		ar[i][ar[i].length-1]+=ar[i][j];
-		ar[i][ar[i].length] = ar[i][ar[i].length-1]/3;
+			ar[i][ar[i].length-1]+=ar[i][j]; // # nice job bro
+// 			ar[i][ar[i].length] = ar[i][ar[i].length-1]/3; // # nice job bro
+			ar[i][ar[i].length] = ar[i][ar[i].length-1]/subject.length; // # but how about this
 		}
 
-	System.out.println("======================");
-	System.out.println("¹øÈ£   ±¹      ¿µ      ¼ö    ÃÑÁ¡   Æò±Õ");
-			for ( i = 0; i<ar.length ; i++ )
-			{System.out.print((i+1)+"\t");
-			for (j=0; j <ar[i].length ; j++)
-			{System.out.print(ar[i][j]+"\t");
-			}
+		System.out.println("======================");
+// 		System.out.println("ë²ˆí˜¸   êµ­      ì˜      ìˆ˜    ì´ì    í‰ê· ");
+		System.out.println("ë²ˆí˜¸\têµ­\tì˜\tìˆ˜\tì´ì \tí‰ê· "); // # how about this
+		for ( i = 0; i<ar.length ; i++ ) {
+			System.out.print((i+1)+"\t");
 			
+			for (j=0; j <ar[i].length ; j++) {
+				System.out.print(ar[i][j]+"\t");
+			}
 			
 			System.out.println();
-			
-			}
+		}
 	}
 }
 
 /*
-[½ÇÇà¿¹]
-1¹ø ÇĞ»ı µ¥ÀÌÅÍ ÀÔ·Â>
-±¹¾î: 100
-¿µ¾î: 100
-¼öÇĞ: 100
-2¹ø ÇĞ»ı µ¥ÀÌÅÍ ÀÔ·Â>
-±¹¾î: 100
-¿µ¾î: 100
-¼öÇĞ: 100
-3¹ø ÇĞ»ı µ¥ÀÌÅÍ ÀÔ·Â>
-±¹¾î: 100
-¿µ¾î: 100
-¼öÇĞ: 100
+[ì‹¤í–‰ì˜ˆ]
+1ë²ˆ í•™ìƒ ë°ì´í„° ì…ë ¥>
+êµ­ì–´: 100
+ì˜ì–´: 100
+ìˆ˜í•™: 100
+2ë²ˆ í•™ìƒ ë°ì´í„° ì…ë ¥>
+êµ­ì–´: 100
+ì˜ì–´: 100
+ìˆ˜í•™: 100
+3ë²ˆ í•™ìƒ ë°ì´í„° ì…ë ¥>
+êµ­ì–´: 100
+ì˜ì–´: 100
+ìˆ˜í•™: 100
 
 
 =================================
-¹øÈ£   ±¹¾î    ¿µ¾î		¼öÇĞ	ÃÑÁ¡   Æò±Õ 
-1¹ø    100		100		100		300		100.0
-2¹ø    100		100		100		300		100.0
-3¹ø    100		100		100		300		100.0
+ë²ˆí˜¸   êµ­ì–´    ì˜ì–´		ìˆ˜í•™	ì´ì    í‰ê·  
+1ë²ˆ    100		100		100		300		100.0
+2ë²ˆ    100		100		100		300		100.0
+3ë²ˆ    100		100		100		300		100.0
 ___________________________________________-
-Æò±Õ    100		100		100
+í‰ê·     100		100		100
 
-°¡·Î °¢ ÇĞ»ı
-¼¼·Î °¢ °ú¸ñÀÇ Æò±Õ
-int º¯¼ö ÇÏ³ª¿Í ÀÌÂ÷¿ø ¹è¿­ 
-ÀÎ¿ø¼ö°¡ ´Ã¾î³ªµµ °è»êÀÌ µÇµµ·Ï 
+ê°€ë¡œ ê° í•™ìƒ
+ì„¸ë¡œ ê° ê³¼ëª©ì˜ í‰ê· 
+int ë³€ìˆ˜ í•˜ë‚˜ì™€ ì´ì°¨ì› ë°°ì—´ 
+ì¸ì›ìˆ˜ê°€ ëŠ˜ì–´ë‚˜ë„ ê³„ì‚°ì´ ë˜ë„ë¡ 
 */
