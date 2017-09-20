@@ -21,15 +21,21 @@ class ArrayEx1
 		System.out.println(subject[j]);
 		ar[i][j] = scan.nextInt();
 		}
+		ar[i][ar[i].length-1]+=ar[i][j];
+		ar[i][ar[i].length] = ar[i][ar[i].length-1]/3;
 		}
 
-	
+	System.out.println("======================");
 	System.out.println("¹øÈ£   ±¹      ¿µ      ¼ö    ÃÑÁ¡   Æò±Õ");
 			for ( i = 0; i<ar.length ; i++ )
 			{System.out.print((i+1)+"\t");
-			for (j=0; j <ar[i].length-2 ; j++)
+			for (j=0; j <ar[i].length ; j++)
 			{System.out.print(ar[i][j]+"\t");
 			}
+			
+			
+			System.out.println();
+			
 			}
 	}
 }
