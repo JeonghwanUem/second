@@ -1,77 +1,59 @@
 import java.util.*;
-class Question5 
-{
-	public static void main(String[] args) 
-	{
-		Scanner scan = new Scanner(System.in);
-		
-		int option=0,i,j,c=0;
-		
-		String phoneBook[][] = new String[5][2];
 
-		String name;
-		
-		for (i=0;i<5 ;i++ )
-		{
-			
-			c++;
-			
-			for (j=0;j<2 ;j++ )
-			{
-				System.out.print("[ÀüÈ­¹øÈ£ºÎ]\n1.ÀÔ·Â\n2.ÀüÃ¼Ãâ·Â\n3.°Ë»ö\n0.Á¾·á\n¼±ÅÃ: ");
-				
-				option = scan.nextInt();
-			
-			switch(option)
-				{
-			case 1: 
-				
-				System.out.print("[»õ ÀüÈ­¹øÈ£ µî·Ï]\nÀÌ¸§:");
-			
-				phoneBook[i][0] = scan.next();
-				
-				
-				System.out.print("ÀüÈ­¹øÈ£:");
-				
-				phoneBook[i][1] = scan.next();
-				
-				if (c!=0)
-				break;
-				
-				
-				
-			
-			case 2: 
-				System.out.print("[ÀüÃ¼ ÀüÈ­¹øÈ£ Ãâ·Â]");
-				System.out.print("ÀÌ¸§: "+phoneBook[i][0]);
-				System.out.print("ÀüÈ­¹øÈ£: "+phoneBook[i][1]);
-				
-				break;
-			
-			case 3: 
-				System.out.print("[ÀüÈ­¹øÈ£ °Ë»ö]\n°Ë»öÇÒ ÀÌ¸§: ");
-				name = scan.next();
-				if (name.equals(phoneBook[i][0]))
-				
-				System.out.print("°Ë»öµÈ ÀüÈ­¹øÈ£ :" + phoneBook[i][1]);
-				
+class Question5 {
 
-				break;
-			
-			default: 
-				System.out.print("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù.");
-			return;
-		}
-		System.out.println();
-			}
-			
-	}
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        int option = 0, i, j, c = 0;
+
+        String phoneBook[][] = new String[5][2];
+        String name;
+
+        for (i = 0; i < 5; i++) {
+            c++;
+
+            for (j = 0; j < 2; j++) {
+                System.out.print("[ì „í™”ë²ˆí˜¸ë¶€]\n1.ìž…ë ¥\n2.ì „ì²´ì¶œë ¥\n3.ê²€ìƒ‰\n0.ì¢…ë£Œ\nì„ íƒ: ");
+
+                option = scan.nextInt();
+
+                switch (option) {
+                    case 1:
+                        System.out.print("[ìƒˆ ì „í™”ë²ˆí˜¸ ë“±ë¡]\nì´ë¦„:");
+                        phoneBook[i][0] = scan.next();
+                        System.out.print("ì „í™”ë²ˆí˜¸:");
+                        phoneBook[i][1] = scan.next();
+                        if (c != 0)
+                            break;
+
+                    case 2:
+                        System.out.print("[ì „ì²´ ì „í™”ë²ˆí˜¸ ì¶œë ¥]");
+                        System.out.print("ì´ë¦„: " + phoneBook[i][0]);
+                        System.out.print("ì „í™”ë²ˆí˜¸: " + phoneBook[i][1]);
+                        break;
+
+                    case 3:
+                        System.out.print("[ì „í™”ë²ˆí˜¸ ê²€ìƒ‰]\nê²€ìƒ‰í•  ì´ë¦„: ");
+                        name = scan.next();
+                        if (name.equals(phoneBook[i][0]))
+                            System.out.print("ê²€ìƒ‰ëœ ì „í™”ë²ˆí˜¸ :" + phoneBook[i][1]);
+                        break;
+
+                    case 0 :
+                        System.out.print("í”„ë¡œê·¸ëž¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤.");
+                        return;
+                        
+                    default:
+                        System.out.print("re type pls");
+                        break;
+                }
+                System.out.println();
+                
+            } // # end of inner for state
+
+        } // # end of outer for state
+
+    } // # end of main method
+
 }
-}
-		
-		
-		
-		
-		
-	
-
