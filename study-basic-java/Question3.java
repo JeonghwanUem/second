@@ -17,9 +17,9 @@ public class Question3 {
 		char ar[] = {'0','1','2','3','4','5','6','7','8','9','+','-','*'};
 		int i=0;
 		
-		System.out.println("¼ö½Ä ÀÔ·Â:");
+		System.out.println("ìˆ˜ì‹ ìž…ë ¥:");
 		
-		//ch[i]= scan.next().charAt(0);//ÄÉ¸¯ÅÍ °ª ÀÔ·ÂÇÒ ¶§´Â ÀÌ·¸°Ô ÀÔ·ÂÇØ¾ß ÇÑ´Ù. 
+		//ch[i]= scan.next().charAt(0);//ì¼€ë¦­í„° ê°’ ìž…ë ¥í•  ë•ŒëŠ” ì´ë ‡ê²Œ ìž…ë ¥í•´ì•¼ í•œë‹¤. 
 		
 			str= scan.next();
 			for (i=0 ; i< str.length(); i++)
@@ -27,13 +27,15 @@ public class Question3 {
 				s1= str.substring(i,i+1);
 			if (s1.equals(ar[i]))
 		{
-			System.out.println("Àß¸øÀÔ·Â");
+			System.out.println("ìž˜ëª»ìž…ë ¥");
 			return;
 			
 		}
-			if (ar[ar.length]!='=')
+			if (ar[ar.length]!='=') // # this line will throw 'ArrayIndexOutOfBoundsException'.
+			// # first, you need to clearly know what is the difference btw Array's index and element.
+			// # following here >>> https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html
 			{
-				System.out.println("Àß¸øÀÔ·Â");
+				System.out.println("ìž˜ëª»ìž…ë ¥");
 				break;
 			}
 			
@@ -44,7 +46,7 @@ public class Question3 {
 		{
 			if (ar[even]=='+'||ar[even]=='-'||ar[even]=='*')
 		{
-			System.out.println("Àß¸øÀÔ·Â");
+			System.out.println("ìž˜ëª»ìž…ë ¥");
 		}
 		
 			
@@ -80,35 +82,35 @@ public class Question3 {
 		
 
 	}
-/*[¹®Á¦ 3] ¹®ÀÚ¿­·Î ¼ö½ÄÀ» ÀÔ·Â¹Þ¾Æ °è»êÇÏ¿© °á°ú¸¦ Ãâ·ÂÇÑ´Ù.
-[Á¶°Ç]
-- ÇÑÀÚ¸® ¾çÀÇ Á¤¼öµé°ú »çÄ¢¿¬»êÀÌ Æ÷ÇÔµÈ ¼ö½ÄÀ» ¹®ÀÚ¿­·Î ÀÔ·Â¹Þ´Â´Ù.
-- ¼ö½ÄÀÇ ¸¶Áö¸·Àº ¹Ýµå½Ã '=' ¹®ÀÚ·Î ³¡³ª¾ß ÇÑ´Ù.
-- ¿¬»êÀÚ ¿ì¼± ¼øÀ§ °í·ÁÇÏÁö ¾Ê°í ÀÔ·ÂµÈ ¼ø¼­´ë·Î °è»êÇÑ´Ù.
-- 0~9, +, -, *, / ÀÌ¿ÜÀÇ ¹®ÀÚ°¡ Ç¥ÇÔµÇ¾î ÀÖÀ¸¸é ¿¡·¯¸Þ½ÃÁö Ãâ·ÂÇÏ°í ÇÁ·Î±×·¥À» Á¾·áÇÑ´Ù.
+/*[ë¬¸ì œ 3] ë¬¸ìžì—´ë¡œ ìˆ˜ì‹ì„ ìž…ë ¥ë°›ì•„ ê³„ì‚°í•˜ì—¬ ê²°ê³¼ë¥¼ ì¶œë ¥í•œë‹¤.
+[ì¡°ê±´]
+- í•œìžë¦¬ ì–‘ì˜ ì •ìˆ˜ë“¤ê³¼ ì‚¬ì¹™ì—°ì‚°ì´ í¬í•¨ëœ ìˆ˜ì‹ì„ ë¬¸ìžì—´ë¡œ ìž…ë ¥ë°›ëŠ”ë‹¤.
+- ìˆ˜ì‹ì˜ ë§ˆì§€ë§‰ì€ ë°˜ë“œì‹œ '=' ë¬¸ìžë¡œ ëë‚˜ì•¼ í•œë‹¤.
+- ì—°ì‚°ìž ìš°ì„  ìˆœìœ„ ê³ ë ¤í•˜ì§€ ì•Šê³  ìž…ë ¥ëœ ìˆœì„œëŒ€ë¡œ ê³„ì‚°í•œë‹¤.
+- 0~9, +, -, *, / ì´ì™¸ì˜ ë¬¸ìžê°€ í‘œí•¨ë˜ì–´ ìžˆìœ¼ë©´ ì—ëŸ¬ë©”ì‹œì§€ ì¶œë ¥í•˜ê³  í”„ë¡œê·¸ëž¨ì„ ì¢…ë£Œí•œë‹¤.
 
-[Âü°í]
-- ¹®ÀÚ¿­ Å¸ÀÔÀÇ ¼ýÀÚ¸¦ intÇüÀ¸·Î º¯È¯ÇÏ´Â ¹æ¹ýÀº ´ÙÀ½°ú °°´Ù.
-  StringÀ» int·Î º¯È¯ÇØÁÖ´Â IntegerÅ¬·¡½ºÀÇ ¸Þ¼Òµå¸¦ ÀÌ¿ëÇÑ´Ù.
+[ì°¸ê³ ]
+- ë¬¸ìžì—´ íƒ€ìž…ì˜ ìˆ«ìžë¥¼ intí˜•ìœ¼ë¡œ ë³€í™˜í•˜ëŠ” ë°©ë²•ì€ ë‹¤ìŒê³¼ ê°™ë‹¤.
+  Stringì„ intë¡œ ë³€í™˜í•´ì£¼ëŠ” Integerí´ëž˜ìŠ¤ì˜ ë©”ì†Œë“œë¥¼ ì´ìš©í•œë‹¤.
   	String s = "1";
-	int i = Integer.parseInt(s);	//i´Â 1
+	int i = Integer.parseInt(s);	//iëŠ” 1
 	
-- ¹®ÀÚ Å¸ÀÔÀÇ ¼ýÀÚ¸¦ intÇüÀ¸·Î º¯È¯ÇÏ´Â ¹æ¹ýÀº ´ÙÀ½°ú °°´Ù.
-  ÇØ´ç ¹®ÀÚÀÇ À¯´ÏÄÚµå°ª¿¡¼­ ¹®ÀÚ '0'ÀÇ À¯´ÏÄÚµå°ªÀ» »«´Ù.
+- ë¬¸ìž íƒ€ìž…ì˜ ìˆ«ìžë¥¼ intí˜•ìœ¼ë¡œ ë³€í™˜í•˜ëŠ” ë°©ë²•ì€ ë‹¤ìŒê³¼ ê°™ë‹¤.
+  í•´ë‹¹ ë¬¸ìžì˜ ìœ ë‹ˆì½”ë“œê°’ì—ì„œ ë¬¸ìž '0'ì˜ ìœ ë‹ˆì½”ë“œê°’ì„ ëº€ë‹¤.
 	char c = '1';
-	int i = c - '0';		//i´Â 1
+	int i = c - '0';		//iëŠ” 1
 	
-½ÇÇà¿¹1
-¼ö½ÄÀÔ·Â : 1+a
-¼ö½ÄÀÌ Àß¸øµÇ¾ú½À´Ï´Ù.
+ì‹¤í–‰ì˜ˆ1
+ìˆ˜ì‹ìž…ë ¥ : 1+a
+ìˆ˜ì‹ì´ ìž˜ëª»ë˜ì—ˆìŠµë‹ˆë‹¤.
 
-½ÇÇà¿¹2
-¼ö½ÄÀÔ·Â : 1+2*3
-¼ö½ÄÀÌ Àß¸øµÇ¾ú½À´Ï´Ù.
+ì‹¤í–‰ì˜ˆ2
+ìˆ˜ì‹ìž…ë ¥ : 1+2*3
+ìˆ˜ì‹ì´ ìž˜ëª»ë˜ì—ˆìŠµë‹ˆë‹¤.
 
-½ÇÇà¿¹3
-¼ö½ÄÀÔ·Â : 1+2*3=
-°á°ú´Â 9
+ì‹¤í–‰ì˜ˆ3
+ìˆ˜ì‹ìž…ë ¥ : 1+2*3=
+ê²°ê³¼ëŠ” 9
 */
 
 
