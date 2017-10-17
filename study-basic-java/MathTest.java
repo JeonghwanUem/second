@@ -2,64 +2,50 @@ package const_0929_ex221_q1;
 
 public class MathTest {
 
-	public static void main(String[] args) {
-			
-		
-/*		System.out.println(Integer.MAX_VALUE);
-		
-		System.out.println(Math.PI);*/
-		int i,j=0;
-		int lotto[] = new int [6];
-		double num;
-		double number[] = new double[6];
-		
-	/*	num = Math.sqrt(9);
-		System.out.println(num);
-		
-		
-		num= Math.random();//1¹Ì¸¸ÀÇ ·£´ıÇÑ ¼ıÀÚ 0<=x<1
-		System.out.println(num);
-		System.out.println((int)(num*101));//0<=X<=100¿øÇÏ´Â ¼ıÀÚÀÇ °¹¼ö¸¸Å­ °öÇÏ°í ¼Ò¼öÁ¡ ÀÚ¸®¸¦ Àß¶ó³»¸é ¿øÇÏ´Â ¼ö¸¦ ¾òÀ» ¼öÀÖÀ½
-		System.out.println((int)(num*10));//0<=X<10
-		System.out.println((int)(num*100)+1);//1<=X<=100
-		*/
-		num= Math.random();
-		
-		for (i=0; i< lotto.length; i++){ 	
-			
-			number[i] = Math.random();
-		
-			lotto[i] = ((int)(number[i]*45)+1);
+    public static void main(String[] args) {
 
-			if (i==0){
-				
-				System.out.println(lotto[i]+" ");
-		}
-						
-			if (i>0){
-			
-				for (j =0; j< i; j++){	
-		
-					if (lotto[i]==lotto[j]){
-		
-				break;
-		}
-		
-		}	
-			System.out.println(lotto[i]+" ");
-		}
-			
-		}	
-		
+        int size = 6;
+        int maxNum = 45;
+        int padding = 1;
+
+        int lotto[] = new int[size];
+        int tempLotto;
+
+        int count = 0;
+        boolean isValid;
+
+        while(count < size) {
+            // initialize validation
+            isValid = true;
+
+            // create temp
+            tempLotto = ((int) (Math.random()*maxNum) + padding);
+
+            // check validation
+            for(int lottoNum : lotto) {
+                if(lottoNum == tempLotto) {
+                    isValid = false;
+                }
+            }
+
+            if(isValid) {
+                // insert
+                lotto[count] = tempLotto;
+
+                // increment
+                count++;
+            }
+        }
+
+        // print out
+        for(int lottoNum : lotto) {
+            System.out.println(lottoNum+" ");
+        }
+    }
+
 }
-}
-		
-		
-	
 
-
-/*·Î¶Ç ¹øÈ£ »ı¼º±â Áßº¹¾ÈµÇ°í ÀÌÁßÆ÷¹®°ú ÀÌÇÁÇü[1,43,2,44,23,11]
- - 1~45±îÁöÀÇ ¼ıÀÚ 6°³ ·£´ı »ı¼º
- - ÇÑ¹ø ³ª¿Â ¼ıÀÚ°¡ ¶Ç ³ª¿À¸é ´Ù½Ã,
+/*ë¡œë˜ ë²ˆí˜¸ ìƒì„±ê¸° ì¤‘ë³µì•ˆë˜ê³  ì´ì¤‘í¬ë¬¸ê³¼ ì´í”„í˜•[1,43,2,44,23,11]
+ - 1~45ê¹Œì§€ì˜ ìˆ«ì 6ê°œ ëœë¤ ìƒì„±
+ - í•œë²ˆ ë‚˜ì˜¨ ìˆ«ìê°€ ë˜ ë‚˜ì˜¤ë©´ ë‹¤ì‹œ,
  */
- 
