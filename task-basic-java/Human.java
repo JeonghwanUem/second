@@ -1,101 +1,90 @@
-package FirstClass;
+package step3;
 
-public class Human {
-/*이름과 나이 성별을 필드로 가진다
-모든 필드는 private 접근지정자를 설정한다
-모든 필드에 초기값을 설정하는 생성자와 기본 생성자를 생성한다
- 모든 필에드 getter setter를 생성한다 
- human 클래스의 정보를 출력하는 toString 함수를 재정의한다 */
-		
-	private String name, gender; 
-	private int age; 
+import java.io.Serializable;
+
+/**
+ * <pre>
+ * SES(Soft Engineer School) 관리 프로그램의 관리인원(Professor, Trainee, Staff) 클래스의 슈퍼 클래스
+ * 관리인원 클래스들의 공통 속성인 이름, 나이, 주민번호를 멤버 변수로 갖는다.
+ * </pre>
+ * */
+public class Human implements Serializable {//직렬화가 되어있다. 오브젝트에 넣을 수 있다 
+
+	private String name;  //관리인원 이름
+	private int age;	  //관리인원 나이
+	private String jumin; //관리인원 주민번호
 	
+	/**
+	 * 기본 생성자
+	 */
+	public Human() {}
 	
-	public Human() {
-		
-	}
-	
-	public Human(String name, int age, String gender) {
-		
-		this.name = name; 
-		this.age = age;
-		this.gender = gender;
-	}
-	
-	public void setName(String name) {//여기도 매게변수 괄호안에 넣어줘야 하는게 계속 까먹는다  개빠가인듯하다
+	/**
+	 * 주어진 이름, 나이, 주민번호 정보를 가지고 새로운 Human 객체를 생성한다.
+	 * @param name 구성원의 이름
+	 * @param age 구성원의 나이
+	 * @param jumin 구성원의 주민번호
+	 * */
+	public Human(String name, int age, String jumin) {
 		this.name = name;
+		this.age = age;
+		this.jumin = jumin;
 	}
-	
+
+	/**
+	 * 이름을 조회한다.
+	 * @return Human 객체가 가지고 있는 이름
+	 * */
 	public String getName() {
-		
 		return name;
 	}
-	
-	public void setAge(int age) {
-		
-		this.age = age; 
+
+	/**
+	 * 새로운 이름으로 변경한다.
+	 * @param name 변경하고자 하는 새로운 이름
+	 * */
+	public void setName(String name) {
+		this.name = name;
 	}
-	
+
+	/**
+	 * 나이를 조회한다.
+	 * @return Human 객체가 가지고 있는 나이
+	 * */
 	public int getAge() {
-		
-		return age; 
-	}
-	
-	public void setGender(String gender) {
-		
-		this.gender = gender; 
-	}
-	
-	public String gerGender() {
-		
-		return gender; //getter는 매개변수는 없는데신 return 이있으므로 기억하기는 비교적 쉽다 반대로 생각하면 되니깐
-		
-	}
-	
-	
-	
-	@Override//재정의를 했다는 것을 명시적으로 알려주기 위해 어노테이션을 붙여줘야 한다. 
-	public String toString() {
-		
-		return "name: "+ name + "age: " + age + "gender:" + gender;
-		
-	}
-	
-	public void getHuman(Human h) {
-		if (h instanceof Teacher) {
-			System.out.println("teacher 객체");
-	} 
-	else if (h instanceof Student) {
-			System.out.println("student 객체");
-		
-	}
-	
+		return age;
 	}
 
+	/**
+	 * 새로운 나이로 변경한다.
+	 * @param age 변경하고자 하는 새로운 나이
+	 * */
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	/**
+	 * 주민번호를 조회한다.
+	 * @return Human 객체가 가지고 있는 주민번호
+	 * */
+	public String getJumin() {
+		return jumin;
+	}
+
+	/**
+	 * 새로운 주민번호로 변경한다.
+	 * @param jumin 변경하고자 하는 새로운 주민번호
+	 * */
+	public void setJumin(String jumin) {
+		this.jumin = jumin;
+	}
+
+	/**
+	 * 객체가 가지고 있는 이름, 나이, 주민번호 정보를 문자열로 리턴한다.
+	 * @return 객체의 내용
+	 */
 	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)//주소비교 
-			return true;
-		if (obj == null)
-			return false;
-		if (!(obj instanceof Human))//상속간계에 있느냐  뜬금없는 클레스를 걸러주기 위한 
-			return false;
-		Human other = (Human) obj;//하향 
-		if (age != other.age)
-			return false;
-		if (gender == null) {
-			if (other.gender != null)
-				return false;
-		} else if (!gender.equals(other.gender))
-			return false;
-		if (name == null) {
-			if (other.name != null)
-				return false;
-		} else if (!name.equals(other.name))
-			return false;
-		return true;
+	public String toString() {
+		return "이름:" + name + ", 나이:" + age + ", 주민번호:" + jumin;
 	}
-	
-	
-
 }
